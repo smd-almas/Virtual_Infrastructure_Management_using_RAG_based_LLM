@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: k8s-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount local kubeconfig so backend can talk to your cluster
+      - ~/.kube/config:/root/.kube/config:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - frontend
+
+  frontend:
+    build:
+      context: ./k8s-llm-frontend
+      dockerfile: Dockerfile
+    container_name: k8s-llm-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./k8s-llm-frontend:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true

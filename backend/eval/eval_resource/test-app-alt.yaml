@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app-alt
+  labels:
+    app: test-app-alt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-app-alt
+  template:
+    metadata:
+      labels:
+        app: test-app-alt
+    spec:
+      containers:
+      - name: echo
+        image: ealen/echo-server:latest   # simple HTTP echo server
+        ports:
+        - containerPort: 80
+        resources:               # ensures cAdvisor reports CPU consistently
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "200m"
+            memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-app-alt
+  labels:
+    app: test-app-alt
+spec:
+  type: NodePort
+  selector:
+    app: test-app-alt
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30090

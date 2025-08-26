@@ -1,0 +1,48 @@
+
+Summary:
+  Total:	317.6196 secs
+  Slowest:	19.9507 secs
+  Fastest:	0.0111 secs
+  Average:	0.6244 secs
+  Requests/sec:	20.4301
+  
+  Total data:	18346968 bytes
+  Size/request:	5112 bytes
+
+Response time histogram:
+  0.011 [1]	|
+  2.005 [3555]	|■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  3.999 [0]	|
+  5.993 [0]	|
+  7.987 [0]	|
+  9.981 [0]	|
+  11.975 [0]	|
+  13.969 [0]	|
+  15.963 [0]	|
+  17.957 [15]	|
+  19.951 [18]	|
+
+
+Latency distribution:
+  10% in 0.3006 secs
+  25% in 0.3968 secs
+  50% in 0.4830 secs
+  75% in 0.5027 secs
+  90% in 0.6116 secs
+  95% in 0.8025 secs
+  99% in 1.5904 secs
+
+Details (average, fastest, slowest):
+  DNS+dialup:	0.0000 secs, 0.0111 secs, 19.9507 secs
+  DNS-lookup:	0.0000 secs, 0.0000 secs, 0.0003 secs
+  req write:	0.0000 secs, 0.0000 secs, 0.0025 secs
+  resp wait:	0.6241 secs, 0.0110 secs, 19.9477 secs
+  resp read:	0.0001 secs, 0.0000 secs, 0.0028 secs
+
+Status code distribution:
+  [200]	3589 responses
+
+Error distribution:
+  [13]	Get "http://localhost:30090/": EOF
+  [2887]	Get "http://localhost:30090/": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+

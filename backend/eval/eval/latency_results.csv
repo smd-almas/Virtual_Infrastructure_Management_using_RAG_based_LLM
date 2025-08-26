@@ -1,0 +1,7 @@
+query,latency_sec,status
+Deploy an nginx pod,2.9939932823181152,success
+Get all pods in the default namespace,2.337430715560913,success
+Scale deployment myapp to 3 replicas,2.116718292236328,success
+Show me the CPU usage of all pods,2.538318395614624,success
+Fix the failing deployment myapp,2.541327714920044,success
+Expose myapp via a LoadBalancer,2.66867995262146,success

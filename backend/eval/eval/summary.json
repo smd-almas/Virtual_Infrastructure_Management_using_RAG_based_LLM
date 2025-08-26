@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-08-24T12:12:53.176425Z",
+  "total_cases": 30,
+  "passed": 24,
+  "failed": 6,
+  "accuracy": 0.8,
+  "by_category": {
+    "yaml": {
+      "total": 7,
+      "passed": 7,
+      "failed": 0
+    },
+    "scale": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "autoscale": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "autoscale_based_on_metrics": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "optimize_latency": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "analyze_metrics": {
+      "total": 2,
+      "passed": 1,
+      "failed": 1
+    },
+    "metrics_analysis": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "cli": {
+      "total": 6,
+      "passed": 5,
+      "failed": 1
+    },
+    "fix_deployment_issues": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "multi-step": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2
+    },
+    "show_exposed_services": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "clarify": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2
+    }
+  }
+}

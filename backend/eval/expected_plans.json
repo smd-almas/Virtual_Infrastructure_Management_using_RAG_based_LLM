@@ -1,0 +1,192 @@
+{
+  "Deploy nginx with 2 replicas": {
+    "type": "yaml",
+    "content": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nginx\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: nginx\n  template:\n    metadata:\n      labels:\n        app: nginx\n    spec:\n      containers:\n      - name: nginx\n        image: nginx"
+  },
+
+  "Create a deployment named myapp using almas07/hello-llm:latest with 3 replicas": {
+    "type": "yaml",
+    "content": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: myapp\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: myapp\n  template:\n    metadata:\n      labels:\n        app: myapp\n    spec:\n      containers:\n      - name: myapp\n        image: almas07/hello-llm:latest"
+  },
+
+  "Deploy a new app called websvc using nginx image with 2 replicas in default namespace": {
+    "type": "yaml",
+    "content": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: websvc\nspec:\n  replicas: 2\n  selector:\n    matchLabels:\n      app: websvc\n  template:\n    metadata:\n      labels:\n        app: websvc\n    spec:\n      containers:\n      - name: websvc\n        image: nginx"
+  },
+
+  "Create a deployment named redis-store using redis:6 with 1 replica": {
+    "type": "yaml",
+    "content": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: redis-store\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: redis-store\n  template:\n    metadata:\n      labels:\n        app: redis-store\n    spec:\n      containers:\n      - name: redis-store\n        image: redis:6"
+  },
+
+  "Scale demo-app to 3 replicas": {
+    "type": "scale",
+    "name": "demo-app",
+    "replicas": 3
+  },
+
+  "Scale nginx-deploy to 5 replicas": {
+    "type": "scale",
+    "name": "nginx-deploy",
+    "replicas": 5
+  },
+
+  "Enable autoscaling for myapp from 2 to 6 replicas at 70% CPU": {
+    "type": "autoscale",
+    "name": "myapp",
+    "min_replicas": 2,
+    "max_replicas": 6,
+    "target_cpu": 70
+  },
+
+  "Autoscale based on current cpu usage for backend": {
+    "type": "autoscale_based_on_metrics",
+    "name": "backend",
+    "metric": "cpu"
+  },
+
+  "Optimize latency for payment-service": {
+    "type": "optimize_latency",
+    "name": "payment-service"
+  },
+
+  "Optimize latency for unique-app-demo": {
+    "type": "optimize_latency",
+    "name": "unique-app-demo"
+  },
+
+  "Analyze metrics for myapp in default namespace": {
+    "type": "analyze_metrics",
+    "name": "myapp",
+    "namespace": "default"
+  },
+
+  "Show CPU and memory usage for nginx-deploy": {
+    "type": "analyze_metrics",
+    "name": "nginx-deploy",
+    "namespace": "default"
+  },
+
+  "Analyze CPU usage over time for unique-app-demo": {
+    "type": "metrics_analysis",
+    "metric": "cpu",
+    "name": "unique-app-demo",
+    "minutes": 10,
+    "step": 15
+  },
+
+  "Expose deployment myapp via a LoadBalancer service on port 80": {
+    "type": "cli",
+    "content": "kubectl expose deployment myapp --type=LoadBalancer --port=80 --target-port=80"
+  },
+
+  "Provide YAML for a service exposing nginx on port 80": {
+    "type": "yaml",
+    "content": "apiVersion: v1\nkind: Service\nmetadata:\n  name: nginx-service\nspec:\n  selector:\n    app: nginx\n  ports:\n  - protocol: TCP\n    port: 80\n    targetPort: 80\n  type: LoadBalancer"
+  },
+
+  "Fix issues in payment-service in staging": {
+    "type": "fix_deployment_issues",
+    "name": "payment-service",
+    "namespace": "staging"
+  },
+
+  "Fix issues in unique-app-demo in default namespace": {
+    "type": "fix_deployment_issues",
+    "name": "unique-app-demo",
+    "namespace": "default"
+  },
+
+  "Diagnose and fix webapp in default namespace": {
+    "type": "fix_deployment_issues",
+    "name": "webapp",
+    "namespace": "default"
+  },
+
+  "Deploy webapp, expose service and enable autoscaler": [
+    {
+      "type": "yaml",
+      "content": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: webapp\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: webapp\n  template:\n    metadata:\n      labels:\n        app: webapp\n    spec:\n      containers:\n      - name: webapp\n        image: nginx"
+    },
+    {
+      "type": "cli",
+      "content": "kubectl expose deployment webapp --type=LoadBalancer --port=80 --target-port=80"
+    },
+    {
+      "type": "autoscale",
+      "name": "webapp",
+      "min_replicas": 1,
+      "max_replicas": 5,
+      "target_cpu": 60
+    }
+  ],
+
+  "Deploy an app named multi-step-demo using nginx image and then expose it and enable autoscaling": [
+    {
+      "type": "yaml",
+      "content": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: multi-step-demo\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: multi-step-demo\n  template:\n    metadata:\n      labels:\n        app: multi-step-demo\n    spec:\n      containers:\n      - name: multi-step-demo\n        image: nginx"
+    },
+    {
+      "type": "cli",
+      "content": "kubectl expose deployment multi-step-demo --type=LoadBalancer --port=80 --target-port=80"
+    },
+    {
+      "type": "autoscale",
+      "name": "multi-step-demo",
+      "min_replicas": 1,
+      "max_replicas": 5,
+      "target_cpu": 60
+    }
+  ],
+
+  "Show externally exposed services": {
+    "type": "show_exposed_services"
+  },
+
+  "List all deployments in default namespace": {
+    "type": "cli",
+    "content": "kubectl get deployments -n default"
+  },
+
+  "List pods in default namespace": {
+    "type": "cli",
+    "content": "kubectl get pods -n default"
+  },
+
+  "Run kubectl get pods": {
+    "type": "cli",
+    "content": "kubectl get pods"
+  },
+
+  "Get logs for pod demo-app-abc123": {
+    "type": "cli",
+    "content": "kubectl logs demo-app-abc123"
+  },
+
+  "Provide kubectl command to rollout restart deployment myapp": {
+    "type": "cli",
+    "content": "kubectl rollout restart deployment myapp"
+  },
+
+  "Create deployment named 123-invalid-name using nginx (test label validation)": {
+    "type": "clarify",
+    "missing": null,
+    "hint": "Deployment name appears invalid (must start and end with alphanumeric characters). Please provide a valid name."
+  },
+
+  "Deploy an app with no image specified (should request clarification)": {
+    "type": "clarify",
+    "missing": "image",
+    "hint": "Please specify the Docker image name (e.g., username/repo:tag)."
+  },
+
+  "Create a cronjob that runs echo hello every minute": {
+    "type": "yaml",
+    "content": "apiVersion: batch/v1\nkind: CronJob\nmetadata:\n  name: echo-hello\nspec:\n  schedule: \"* * * * *\"\n  jobTemplate:\n    spec:\n      template:\n        spec:\n          containers:\n          - name: echo\n            image: busybox\n            args:\n            - /bin/sh\n            - -c\n            - echo hello\n          restartPolicy: OnFailure"
+  },
+
+  "Provide YAML for a ConfigMap storing app settings": {
+    "type": "yaml",
+    "content": "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: app-settings\ndata:\n  key: value\n  LOG_LEVEL: info"
+  }
+}

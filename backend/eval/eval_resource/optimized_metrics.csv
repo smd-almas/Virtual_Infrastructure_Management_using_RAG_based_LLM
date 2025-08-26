@@ -1,0 +1,9 @@
+timestamp,cpu,memory
+2025-08-24T17:36:10.209727Z,error,,,"HTTPConnectionPool(host='localhost', port=19092): Read timed out. (read timeout=10)"
+2025-08-24T17:36:25.225307Z,error,,,"HTTPConnectionPool(host='localhost', port=19092): Read timed out. (read timeout=10)"
+2025-08-24T17:36:40.240133Z,error,,,"HTTPConnectionPool(host='localhost', port=19092): Read timed out. (read timeout=10)"
+2025-08-24T17:36:55.254192Z,error,,,"HTTPConnectionPool(host='localhost', port=19092): Read timed out. (read timeout=10)"
+2025-08-24T17:37:10.268392Z,error,,,"HTTPConnectionPool(host='localhost', port=19092): Read timed out. (read timeout=10)"
+2025-08-24T17:37:25.283452Z,error,,,"HTTPConnectionPool(host='localhost', port=19092): Read timed out. (read timeout=10)"
+2025-08-24T17:37:40.298090Z,error,,,"HTTPConnectionPool(host='localhost', port=19092): Read timed out. (read timeout=10)"
+2025-08-24T17:37:55.312270Z,error,,,"HTTPConnectionPool(host='localhost', port=19092): Read timed out. (read timeout=10)"

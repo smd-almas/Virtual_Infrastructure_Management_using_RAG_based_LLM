@@ -1,0 +1,12 @@
+openai
+fastapi
+uvicorn
+python-multipart
+kubernetes
+chromadb
+schedule
+requests
+jinja2
+plotly
+httpx
+#kubectl port-forward -n monitoring prometheus-kube-prometheus-stack-prometheus-0 19092:9090

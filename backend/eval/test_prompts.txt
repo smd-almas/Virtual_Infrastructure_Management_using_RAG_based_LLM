@@ -1,0 +1,49 @@
+# Deploy / create
+Deploy nginx with 2 replicas
+Create a deployment named myapp using almas07/hello-llm:latest with 3 replicas
+Deploy a new app called websvc using nginx image with 2 replicas in default namespace
+Create a deployment named redis-store using redis:6 with 1 replica
+
+# Scale / autoscale
+Scale demo-app to 3 replicas
+Scale nginx-deploy to 5 replicas
+Enable autoscaling for myapp from 2 to 6 replicas at 70% CPU
+Autoscale based on current cpu usage for backend
+
+# Optimize / performance
+Optimize latency for payment-service
+Optimize latency for unique-app-demo
+
+# Analyze / metrics
+Analyze metrics for myapp in default namespace
+Show CPU and memory usage for nginx-deploy
+Analyze CPU usage over time for unique-app-demo
+
+# Expose / services
+Expose deployment myapp via a LoadBalancer service on port 80
+Provide YAML for a service exposing nginx on port 80
+
+# Fix / diagnose
+Fix issues in payment-service in staging
+Fix issues in unique-app-demo in default namespace
+Diagnose and fix webapp in default namespace
+
+# Multi-step
+Deploy webapp, expose service and enable autoscaler
+Deploy an app named multi-step-demo using nginx image and then expose it and enable autoscaling
+
+# Misc infra
+Show externally exposed services
+List all deployments in default namespace
+List pods in default namespace
+
+# CLI-oriented
+Run kubectl get pods
+Get logs for pod demo-app-abc123
+Provide kubectl command to rollout restart deployment myapp
+
+# Edge / ambiguous inputs
+Create deployment named 123-invalid-name using nginx (test label validation)
+Deploy an app with no image specified (should request clarification)
+Create a cronjob that runs echo hello every minute
+Provide YAML for a ConfigMap storing app settings
